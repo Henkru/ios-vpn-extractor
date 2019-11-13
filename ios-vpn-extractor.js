@@ -1,0 +1,12 @@
+console.warn('[*] Get VPN Manager')
+const manager = ObjC.classes.NEVPNManager['+ sharedManager']()
+console.warn('[*] Get current configuration')
+const cfg = manager['protocolConfiguration']()
+const identityData = cfg['identityData']()
+console.warn('[*] Server address: ' + cfg['serverAddress']().toString())
+console.warn('[*] Remote ID: ' + cfg['remoteIdentifier']().toString())
+console.warn('[*] Local ID: ' + cfg['localIdentifier']().toString())
+console.warn('[*] Identity password: ' + cfg['identityDataPassword']().toString())
+console.warn('[*] Identity data: '+identityData)
+console.warn('')
+
